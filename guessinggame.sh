@@ -21,5 +21,10 @@ while [[ iscorrect -eq 0 ]]
 do
   echo "Guess the number of files in this directory: "
   read guess
-  checkguess $guess
+  if ! [[ $guess =~ ^[0-9]+$ ]]
+  then
+    echo "Please enter an integer"
+  else
+    checkguess $guess
+  fi
 done
