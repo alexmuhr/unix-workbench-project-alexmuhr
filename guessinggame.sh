@@ -1,5 +1,5 @@
 # use ls and egrep to count the number of files in the current directory
-numfiles=$(ls | wc -l)
+numfiles=$(ls -p | grep -v / | wc -l)
 iscorrect=0
 
 # function that checks a player's guess against the correct answer
